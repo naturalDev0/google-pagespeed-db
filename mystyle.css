@@ -1,0 +1,116 @@
+/* Import Google Font cdn */
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+tr {
+  vertical-align: middle;
+}
+
+/* thead th {
+  position: sticky;
+  top: 20;
+} */
+
+/* Overwriting form-check-input */
+.form-check-input {
+  margin: 0 auto;
+}
+
+/* Show | Hide column when necessary */
+.hide-col {
+  display: none;
+}
+.show-col {
+  display: block;
+}
+
+/* Alignment of checkbox and Button text */
+.align-checkbox {
+  text-align: center;
+  padding-top: 40px;
+}
+.align-btn-text {
+  vertical-align: text-bottom;
+}
+
+/* Center the loader text */
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 0;
+  width: 120px;
+}
+
+/* Center the loader */
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add animation to "page content" */
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+  to {
+    bottom: 0px;
+    opacity: 1
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0
+  }
+  to {
+    bottom: 0;
+    opacity: 1
+  }
+}
+
+/* #myDiv {
+    display: none;
+    text-align: center;
+  } */

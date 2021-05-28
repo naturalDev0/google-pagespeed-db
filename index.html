@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Pagespeed API</title>
+  <link rel="stylesheet" href="mystyle.css">
+  <link rel="stylesheet" href="./dist/bootstrap-v5/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!-- <div id="loader"></div> -->
+  <div class="container">
+    <!-- Function bar, for adding new slug to query Pagespeed -->
+    <div class="row mb-3 sticky-top">
+      <div class="col">
+        <h1>Dashboard</h1>
+        <button id="addSlugRow" type="button" class="btn btn-outline-danger mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-plus-square align-btn-text" viewBox="0 0 16 16">
+            <path
+              d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+          </svg>
+          <span class="mx-1">Add slug</span>
+        </button>
+        <button id="showAndDelSlugRow" type="button"
+          class="mx-1 btn btn-outline-warning mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-trash align-btn-text" viewBox="0 0 16 16">
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+            <path fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+          </svg>
+          <!-- <span class="mx-1"></span> -->
+        </button>        
+        <button id="getGgPageSpeed" type="button" class="mx-1 btn btn-outline-success mt-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat"
+            viewBox="0 0 16 16">
+            <path
+              d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z" />
+            <path fill-rule="evenodd"
+              d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z" />
+          </svg>
+          <span class="mx-1">Run</span>
+        </button>
+      </div>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Slugs viewer -->
+    <div class="row mb-3">
+      <div class="col">
+        <table class="table table-striped">
+          <!-- Data Header -->
+          <thead class="text-center">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">URL</th>
+              <th scope="col">FCP</th>
+              <th scope="col">TTI</th>
+              <th scope="col">SI</th>
+              <th scope="col">TBT</th>
+              <th scope="col">LCP</th>
+              <th scope="col">CLS</th>
+            </tr>
+          </thead>
+          <!-- Data -->
+          <tbody id="SlugViewer" class="text-center"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript link -->
+  <script src="./dist/bootstrap-v5/js/bootstrap.min.js"></script>
+  <script type="module" src="./dist/js/main.js"></script>  
+</body>
+
+</html>
