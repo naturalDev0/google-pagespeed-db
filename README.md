@@ -35,7 +35,8 @@
 
 
 3. Navigate to the URL on your localhost
-!["screenshot-on-searching-for-actual-url-on-localhost"](doc-images/browser-url.png "Search bar on MS Edge")
+    
+    !["screenshot-on-searching-for-actual-url-on-localhost"](doc-images/browser-url.png "Search bar on MS Edge")
 
 
 4. Enjoy the application!
