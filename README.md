@@ -27,7 +27,7 @@
 2. Paste it inside an Plug-n-play local server (i.e., XAMPP, WAMP, MAMP)
 <br>( The following example is for Windows PC )
 
-    !["screenshot-of-XAMPP-control-panel"](doc-images\xampp-control-panel.png "XAMPP Control Panel screenshot")
+    !["screenshot-of-XAMPP-control-panel"](doc-images/xampp-control-panel.png "XAMPP Control Panel screenshot")
 
     ```
     c:/xampp/htdocs/<folder-name-of-google-dashboard>/<files-location-to-paste-in>
@@ -35,7 +35,7 @@
 
 
 3. Navigate to the URL on your localhost
-!["screenshot-on-searching-for-actual-url-on-localhost"](doc-images\browser-url.png "Search bar on MS Edge")
+!["screenshot-on-searching-for-actual-url-on-localhost"](doc-images/browser-url.png "Search bar on MS Edge")
 
 
 4. Enjoy the application!
